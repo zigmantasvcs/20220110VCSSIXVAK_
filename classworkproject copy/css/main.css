@@ -1,0 +1,21 @@
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main > section{
+    width: 50%;
+    /* border: 1px solid black; */
+}
+
+main > section > article{
+    /* border: 1px solid black; */
+    min-height: 600px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+article img{
+    width: 100%;
+}

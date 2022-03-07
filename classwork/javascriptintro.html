@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- html turinys rašomas čia -->
+    <h1><!--innerText--></h1>
+    <p></p>
+    <p class="second"></p>
+
+    <div>
+        <input type="text" name="" id="password">
+    </div>
+
+    <span></span>
+
+    <div>
+        <input type="button" value="OK" id="ok">
+    </div>
+
+    <script>
+        // kintamojo aprasymas, reiksmes priskyrimas
+        // declare variables not war
+        let number1 = 5;
+        number1 = 6;
+
+        let number2 = 4;
+
+        let numberThree = 8;
+
+        let result = number1 * number2 * numberThree;
+
+        // į ekraną išvedimo būdai:
+        // į konsolę
+        console.log(result);
+
+        // pranešimo langas
+        //alert(result);
+
+        // į elementą
+        document.querySelector("h1").innerText = result;
+
+        let name = "Jonas";
+        let surname = "Jonaitis";
+
+        document.querySelector("p").innerText =  name + " " + surname;
+        document.querySelector("p").innerHTML = "<b>" + name + " " + surname + "</b>";
+        document.querySelector("p").innerHTML = "<b>" + name + "</b> " + surname;
+        document.querySelector("p").innerHTML += "<b>" + name + "</b> " + surname; // pridedu prie turinio
+
+        document.querySelector(".second").innerText = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium vero ullam, corporis expedita vitae molestias quia porro velit minus atque magni natus eos delectus odit veniam voluptatum unde consequuntur rerum.";
+
+        // į input elementą
+        document.querySelector("#password").value = "Querty123";
+
+        // paimti is input elemento reiksme
+        let password = document.querySelector("#password").value;
+        document.querySelector("span").innerText = password;
+
+
+        // paspaudimo ivykis
+        document.querySelector("#ok").addEventListener(
+            "click",
+            function(){
+                // aprasomas konkretus ivykis
+                document.querySelector("body").style.backgroundColor = "red";
+            }
+        );
+
+    </script>
+</body>
+</html>

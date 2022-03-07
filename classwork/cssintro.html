@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/cssintro.css">
+    <style>
+        h1, h2, .paragraph1{
+            color: red!important;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif!important;
+            font-style: italic;
+            line-height: 20px;
+        }
+
+        /* gylio selektorius */
+        div p{
+            text-decoration: underline;
+        }
+
+        /* tiesioginio vaikinio elemento selektorius */
+        div > p{
+            letter-spacing: 2px;
+        }
+
+        section p{
+            /* border-style: solid;
+            border-color: white;
+            border-width: 1px; */
+            border: 1px solid white;
+        }
+
+        /* atributų selektorius */
+        [readonly]{
+            background-color: silver;
+        }
+
+        [type="password"]{
+            font-size: 20pt;
+        }
+
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: 20pt;
+            font-weight: bold;
+            text-transform: uppercase; 
+        }
+        
+/* pseudo klase kai uzvedi su pelyte */
+        a:hover{
+            color: white;
+            background-color: rgba(153, 0, 184, 1);
+        }
+
+        /* pseudo klase first-child */
+        div:first-child > p{
+            background-color: #8d3a9e;
+        }
+
+        /* pseudo klase nth-child */
+
+        table{
+            border-collapse: collapse;
+            width: 500px;
+        }
+
+
+        /* 2n+1 reiskia kas antra pradedant pirmu */
+        /*  5 reiskia ta konkretu elementa*/
+        tr:nth-child(5), td:nth-child(2n), th:nth-child(2n){
+            background-color: silver;
+        }
+/* 
+        td:nth-child(2n){
+            background-color: silver;
+        } */
+
+    </style>
+</head>
+<body>
+    <h1 style="color: lawngreen;font-family: 'Courier New', Courier, monospace;">CSS įvadas</h1>
+
+    <h2>Stiliaus pavyzdys 1</h2>
+
+    <p class="paragraph1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quo doloremque eaque at non illo consequatur, laboriosam et consequuntur voluptates vitae natus numquam odio cumque expedita? Qui earum quaerat aut?</p>
+
+    <p class="paragraph2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam iure repudiandae omnis necessitatibus reiciendis eos odio voluptatem doloremque optio, sunt id fuga praesentium deserunt, maxime illo unde aliquam nobis accusamus.</p>
+
+    <p id="last">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo atque debitis ipsa cum labore at, architecto, aspernatur soluta a alias assumenda inventore maxime. Cum dolorem possimus amet nulla omnis nemo?</p>
+
+    <div>
+        <div>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius quas rem assumenda, dolores totam minus ipsam et modi eaque nobis excepturi tempore molestias vero, quos, omnis mollitia in quod voluptate.</p>
+            <section>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima nesciunt nam doloribus sunt distinctio inventore ipsum, iure rerum quia adipisci aspernatur, voluptatibus voluptatem totam at architecto deleniti, saepe est modi.</p>
+            </section>
+        </div>
+    
+        <div>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius quas rem assumenda, dolores totam minus ipsam et modi eaque nobis excepturi tempore molestias vero, quos, omnis mollitia in quod voluptate.</p>
+            <section>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima nesciunt nam doloribus sunt distinctio inventore ipsum, iure rerum quia adipisci aspernatur, voluptatibus voluptatem totam at architecto deleniti, saepe est modi.</p>
+            </section>
+        </div>
+    </div>
+    
+    <fieldset>
+        <legend>Tekstas</legend>
+        <input type="password">
+        <input type="text">
+        <input type="text" value="Jonas" readonly>
+    </fieldset>
+
+    <nav>
+        <a href="#">Mokymai</a>
+        <a href="#">Kontaktai</a>
+        <a href="#">Galerija</a>
+    </nav>
+
+    <table>
+        <tr>
+            <th>Vardas</th>
+            <th>Pavardė</th>
+            <th>Vardas</th>
+            <th>Pavardė</th>
+        </tr>
+        <tr>
+            <td>Jonas</td>
+            <td>Jonaitis</td>
+            <td>Jonas</td>
+            <td>Jonaitis</td>
+        </tr>
+        <tr>
+            <td>Onutė</td>
+            <td>Pakalnutė</td>
+            <td>Jonas</td>
+            <td>Jonaitis</td>
+        </tr>
+        <tr>
+            <td>Petras</td>
+            <td>Petraitis</td>
+            <td>Jonas</td>
+            <td>Jonaitis</td>
+        </tr>
+        <tr>
+            <td>Zigmantas</td>
+            <td>Račkauskas</td>
+            <td>Jonas</td>
+            <td>Jonaitis</td>
+        </tr>
+        <tr>
+            <td>Jonas</td>
+            <td>Jonaitis</td>
+            <td>Jonas</td>
+            <td>Jonaitis</td>
+        </tr>
+        <tr>
+            <td>Onutė</td>
+            <td>Pakalnutė</td>
+            <td>Jonas</td>
+            <td>Jonaitis</td>
+        </tr>
+        <tr>
+            <td>Petras</td>
+            <td>Petraitis</td>
+            <td>Jonas</td>
+            <td>Jonaitis</td>
+        </tr>
+        <tr>
+            <td>Zigmantas</td>
+            <td>Račkauskas</td>
+            <td>Jonas</td>
+            <td>Jonaitis</td>
+        </tr>
+    </table>
+ 
+</body>
+</html>

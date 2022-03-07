@@ -1,0 +1,22 @@
+body{
+    background-color: blue;
+}
+/* elemento selektorius */
+p{
+    color: white;
+}
+
+/* klases selektorius */
+.paragraph1{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.paragraph2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* id selektorius */
+#last{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+

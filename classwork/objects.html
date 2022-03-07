@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Studentai</h1>
+    <table>
+        <tr>
+            <th>El. Nr.</th>
+            <th>Vardas</th>
+            <th>Pavardė</th>
+            <th>Amžius</th>
+            <th>Slapyvardis</th>
+        </tr>
+       
+    </table>
+
+    <script>
+        // objektai
+
+        let student1 = {
+            name: "Jonas",
+            surname: "Jonaitis",
+            nickname: "tinginys",
+            age: 19
+        };
+
+        let student2 = {
+            name: "Onutė",
+            surname: "Pakalnutė",
+            nickname: "ona123",
+            age: 19
+        };
+
+        let students = [student1, student2];
+
+        let studentsExample2 = [
+            {
+                name: "Jonas",
+                surname: "Jonaitis",
+                nickname: "tinginys",
+                age: 19
+            },
+            {
+                name: "Onutė",
+                surname: "Pakalnutė",
+                nickname: "ona123",
+                age: 19
+            },
+            {
+                name: "Petras",
+                surname: "Petraitis",
+                nickname: "petriukas",
+                age: 19
+            }
+        ];
+
+        console.log(student1);
+        
+        console.log(student1.name + " " + student1.surname);
+
+        console.log(studentsExample2[1]);
+
+        console.log(studentsExample2[1].name);
+
+
+        for (let index = 0; index < studentsExample2.length; index++) {
+            const element = studentsExample2[index];
+            
+            console.log(element.name);
+
+            let rowTemplate = "<tr><td>{{number}}</td><td>{{name}}</td><td>{{surname}}</td><td>{{age}}</td><td>{{nickname}}</td></tr>";
+
+            rowTemplate = rowTemplate.replace("{{number}}", index + 1);
+            rowTemplate = rowTemplate.replace("{{name}}", element.name);
+            rowTemplate = rowTemplate.replace("{{surname}}", element.surname);
+            rowTemplate = rowTemplate.replace("{{age}}", element.age);
+            rowTemplate = rowTemplate.replace("{{nickname}}", element.nickname);
+
+            document.querySelector("table").innerHTML += rowTemplate;
+
+        }
+
+
+    </script>
+</body>
+</html>

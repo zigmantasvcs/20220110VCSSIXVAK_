@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+
+    <div class="modal">
+        <div class="modal-content">
+            <img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg" alt="">
+        </div>
+    </div>
+
+    <div>
+        <select name="" id="languageChanger">
+            <option value="lt">lt</option>
+            <option value="en">en</option>
+        </select>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#">Pagrindinis</a></li>
+            <li><a href="#">Paslaugos</a></li>
+            <li><a href="#">Kontaktai</a></li>
+            <li><a href="#">Apie&nbsp;mus</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section>
+            <article>
+                <h3>Blogo įrašas 1</h3>
+                <img class="image" src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg" alt="">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae nisi sapiente deleniti, eius architecto corrupti minima omnis praesentium ipsum facere. Nostrum inventore voluptatem error officia autem ratione dicta id ullam?</p>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h3>Blogo įrašas 2</h3>
+                <div class="content">
+                    <section>
+                        <img class="image" src="https://i.natgeofe.com/n/3faa2b6a-f351-4995-8fff-36d145116882/domestic-dog_16x9.jpg" alt="">
+                    </section>
+                    <section>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet ad excepturi molestiae iste voluptate, laboriosam aperiam assumenda deserunt beatae libero nihil necessitatibus quibusdam architecto placeat iusto, eos quo aspernatur natus!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum reiciendis iure similique commodi cumque dolorem hic vero tenetur quibusdam impedit quas est, quidem maxime consequuntur repudiandae laudantium distinctio, nobis minima.</p>
+                    </section>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="js/modal.js"></script>
+    <script>
+        // funkciju kvietimas
+
+        document.querySelector("article img").addEventListener(
+            "click",
+            function(){
+                //alert('veikia');
+                changeModalDisplayStatus("flex");
+            }
+        );
+
+        document.querySelector(".modal").addEventListener(
+            "click",
+            function(){
+                changeModalDisplayStatus("none");
+            }
+        );
+
+        let localStorage = window.localStorage;
+
+        let language = localStorage.getItem("lang");
+
+        if(language){
+            document.querySelector("#languageChanger").value = language;
+        }
+        else{
+            language = document.querySelector("#languageChanger").value;
+        }
+
+        document.querySelector("#languageChanger").addEventListener(
+            "change",
+            function(){
+                localStorage.setItem("lang", this.value);
+            }
+        )
+
+
+
+    </script>
+</body>
+</html>

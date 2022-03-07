@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Formos</h1>
+
+    <form action="forms.html" method="post">
+        <div class="">
+            <div>
+                <label for="name">Vardas</label>
+            </div>
+            <div>
+                <input type="text" id="name" name="name" placeholder="Vardas" autocomplete="off">
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <label for="surname">Pavardė</label>
+            </div>
+            <div>
+                <input type="text" id="surname" name="surname">
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <label for="password">Slaptažodis</label>
+            </div>
+            <div>
+                <input type="password" id="password" name="password">
+            </div>
+        </div>
+        <p></p>
+        <div>
+            <input type="submit" value="Siųsti">
+        </div>
+    </form>
+
+    <h2>Daugiau formų</h2>
+
+    <table>
+        <tr>
+            <td><label for="">Vartotojo vardas</label></td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td><label for="">Slaptažodis</label></td>
+            <td><input type="password"></td>
+        </tr>
+    </table>    
+
+    <h5>Kalbos</h5>
+    <label for="">Anglų</label>
+    <input type="checkbox">
+    <label for="">Vokiečių</label>
+    <input type="checkbox">
+    <label for="">Java</label>
+    <input type="checkbox">
+
+    <h5>Lytis</h5>
+    <label for="">Vyras</label>
+    <input type="radio" name="gender" value="V">
+    <label for="woman">Moteris</label>
+    <input type="radio" name="gender" id="woman" value="M">
+
+    <h5>Šaltinis</h5>
+    <select>
+        <option value="">...</option>
+        <option value="F" selected>Facebook</option>
+        <option value="G">Google</option>
+        <option value="I">Instagram</option>
+    </select>
+
+    <h5>Komentaras</h5>
+    <textarea cols="30" rows="10" placeholder="Rašykite komentarą"></textarea>
+</body>
+
+</html>
