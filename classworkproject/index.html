@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
+    <!-- <img src="https://picsum.photos/200/300?random=1">
+    <img src="https://picsum.photos/200/300?random=2">
+    <img src="https://picsum.photos/200/300?random=3">
+    <img src="https://picsum.photos/200/300?random=4"> -->
 
     <div class="modal">
         <div class="modal-content">
@@ -26,10 +30,10 @@
 
     <nav>
         <ul>
-            <li><a href="#">Pagrindinis</a></li>
-            <li><a href="#">Paslaugos</a></li>
-            <li><a href="#">Kontaktai</a></li>
-            <li><a href="#">Apie&nbsp;mus</a></li>
+            <li><a href="#" translation-menu-home>Pagrindinis</a></li>
+            <li><a href="#" translation-menu-services>Paslaugos</a></li>
+            <li><a href="#" translation-menu-contacts>Kontaktai</a></li>
+            <li><a href="#" translation-menu-about>Apie&nbsp;mus</a></li>
         </ul>
     </nav>
 
@@ -60,6 +64,7 @@
     <footer></footer>
 
     <script src="js/modal.js"></script>
+    <script src="js/translations.js"></script>
     <script>
         // funkciju kvietimas
 
@@ -78,6 +83,7 @@
             }
         );
 
+        // local storage panaudojimas kalbai
         let localStorage = window.localStorage;
 
         let language = localStorage.getItem("lang");
@@ -89,9 +95,12 @@
             language = document.querySelector("#languageChanger").value;
         }
 
+        doTranslations(language);
+
         document.querySelector("#languageChanger").addEventListener(
             "change",
             function(){
+                doTranslations(this.value);
                 localStorage.setItem("lang", this.value);
             }
         )
