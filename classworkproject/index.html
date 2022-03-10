@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/modal.css">
 </head>
+
 <body>
     <!-- <img src="https://picsum.photos/200/300?random=1">
     <img src="https://picsum.photos/200/300?random=2">
@@ -53,7 +55,8 @@
                         <img class="image" src="https://i.natgeofe.com/n/3faa2b6a-f351-4995-8fff-36d145116882/domestic-dog_16x9.jpg" alt="">
                     </section>
                     <section>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet ad excepturi molestiae iste voluptate, laboriosam aperiam assumenda deserunt beatae libero nihil necessitatibus quibusdam architecto placeat iusto, eos quo aspernatur natus!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet ad excepturi molestiae iste voluptate, laboriosam aperiam assumenda deserunt beatae libero nihil necessitatibus quibusdam architecto placeat iusto, eos quo aspernatur
+                            natus!</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum reiciendis iure similique commodi cumque dolorem hic vero tenetur quibusdam impedit quas est, quidem maxime consequuntur repudiandae laudantium distinctio, nobis minima.</p>
                     </section>
                 </div>
@@ -68,17 +71,38 @@
     <script>
         // funkciju kvietimas
 
-        document.querySelector("article img").addEventListener(
-            "click",
-            function(){
-                //alert('veikia');
-                changeModalDisplayStatus("flex");
-            }
-        );
+        // pasiimu paveiksleliu masyva
+        let imageElements = document.querySelectorAll(".image");
 
+        for (let index = 0; index < imageElements.length; index++) {
+            const element = imageElements[index];
+
+            element.addEventListener(
+                "click",
+                function() {
+                    // pasiimti modal-content elementa
+                    let modalContentElement = document.querySelector(".modal-content");
+                    // isvalyti
+                    modalContentElement.innerHTML = "";
+
+                    // sukurti paveiksliuko elementa su nuotrauka ant kurios paspaudem
+                    console.log(this.getAttribute("src")); // gausiu nuoroda paveiksliuko
+
+                    let newImage = "<img src='" + this.getAttribute("src") + "'>";
+
+                    // ideti i modalcontent elementa
+                    modalContentElement.innerHTML = newImage;
+                    
+                    changeModalDisplayStatus("flex");
+                }
+            );
+
+        }
+
+        // modal uzdarymo logika
         document.querySelector(".modal").addEventListener(
             "click",
-            function(){
+            function() {
                 changeModalDisplayStatus("none");
             }
         );
@@ -88,10 +112,9 @@
 
         let language = localStorage.getItem("lang");
 
-        if(language){
+        if (language) {
             document.querySelector("#languageChanger").value = language;
-        }
-        else{
+        } else {
             language = document.querySelector("#languageChanger").value;
         }
 
@@ -99,14 +122,12 @@
 
         document.querySelector("#languageChanger").addEventListener(
             "change",
-            function(){
+            function() {
                 doTranslations(this.value);
                 localStorage.setItem("lang", this.value);
             }
         )
-
-
-
     </script>
 </body>
+
 </html>
